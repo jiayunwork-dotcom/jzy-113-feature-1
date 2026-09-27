@@ -1,0 +1,24 @@
+[project]
+name = "flat-rolling-force-service"
+version = "1.0.0"
+description = "平板（薄板）单道次轧制受力核算 HTTP 服务：接触弧长、总轧制力、轧制力矩"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.setuptools]
+packages = ["app", "app.core"]
